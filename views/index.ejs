@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .btn, .btn1 {
+            width: 120px;
+            margin-top: 50px;
+            margin-left: 700px;
+            padding: 5px 5px;
+            border-radius: 7px;
+            height: 40px;
+            background-color: lightgreen;
+            font-size: large;
+        }
+
+        .btn:hover {
+            background-color: aqua;
+            cursor: pointer;
+        }
+
+        .btn1:hover {
+            background-color: aqua;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="btn"> Generate </button>
+    <button class="btn1"> Delete </button>
+    <script>
+        document.querySelector(".btn").addEventListener("click", async () => {
+            let a = await fetch("/generate")
+            let b = await a.json()
+        })
+
+        document.querySelector(".btn1").addEventListener("click", async () => {
+            let c = await fetch("/delete")
+            let d = await c.json()
+        }) 
+
+    </script>
+</body>
+
+</html>
